@@ -19,8 +19,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Get Value
-        env: echo ${{secrets.MYTEXT}}
-        run: echo ${{with}}
+        env: ${{secrets.MYTEXT}}
+        run: echo ${{env}}
       - name: Run a one-line script
         run: echo Hello, World
         
