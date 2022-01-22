@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run a one-line script
-        run: echo Hello, world!
+        run: echo ${{secrets.MYTEXT}}
 
       - name: Run a multi-line script
         run: |
