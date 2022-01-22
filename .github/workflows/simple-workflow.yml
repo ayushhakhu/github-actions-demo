@@ -3,12 +3,12 @@ name: CI
 
 on:
   schedule:
-     - cron: '*5 ****'
-#   push:
-#     branches: [ main ]
-#   pull_request:
-#     branches: [ main ]
-#     types: [assigned , unassigned]
+     - cron:  '30 5,17 * * *'
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    types: [assigned , unassigned]
 
   workflow_dispatch:
 
