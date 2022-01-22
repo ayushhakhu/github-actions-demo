@@ -18,9 +18,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - name: Get Value
+        with: echo ${{secrets.MYTEXT}}
       - name: Run a one-line script
-        run: echo ${{secrets.MYTEXT}}
-
+        run: echo Hello, World
+        
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
