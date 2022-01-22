@@ -2,11 +2,13 @@
 name: CI
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-    types: [assigned , unassigned]
+  schedule:
+     - cron: '*5 * * * *'
+#   push:
+#     branches: [ main ]
+#   pull_request:
+#     branches: [ main ]
+#     types: [assigned , unassigned]
 
   workflow_dispatch:
 
