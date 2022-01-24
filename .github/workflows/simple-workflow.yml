@@ -26,6 +26,6 @@ jobs:
          from: Ayush Hakhu  
          attachments: ./Results/*.log
          priority: low
-         run: echo Mail Sent
+      - run: echo Mail Sent
 
          
