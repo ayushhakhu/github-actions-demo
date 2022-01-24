@@ -4,27 +4,15 @@ name: CI
 on:
   schedule:
      - cron:  '*/5 * * * *'
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-    types: [assigned , unassigned]
-
-  workflow_dispatch:
-
+ 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
-#       - name: Get Value
-#         env: ${{secrets.MYTEXT}}
-#         run: echo ${{env}}
-      - name: Run a one-line script
-        run: echo Hello, World
-        
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      - uses: actions/setup-node@v2
+        with:
+         node-version: '16'
+      - run: npm install
+      - run: npm run wdio
