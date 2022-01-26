@@ -63,6 +63,7 @@ exports.config = {
         // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
         // excludeDriverLogs: ['bugreport', 'server'],
     }],
+    headless: true
     //
     // ===================
     // Test Configurations
