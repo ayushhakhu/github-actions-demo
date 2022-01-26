@@ -3,9 +3,14 @@ name: Daily
 
 on:
   schedule:
-#      - cron: '*/15 * * * 1-5'
-#        - cron: '* * * * *'
-       - cron: '10 12 * * *'
+   - cron: '10 12 * * *'
+  workflow_dispatch:
+env:
+ MAIL_USER_EMAIL: ${{secrets.MAIL_USER_EMAIL}}
+ MAIL_USER_PASSWORD: ${{secrets.MAIL_USER_PASSWORD}}
+ MAIL_FROM: ${{secrets.MAIL_FROM}}
+ MAIL_TO: ${{secrets.MAIL_TO}}
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,12 +22,4 @@ jobs:
          node-version: '16'
       - run: npm install
       - run: npm run wdio
-      - uses: dawidd6/action-send-mail@v3
-        with:
-         server_address: smtp.gmail.com 
-         server_port: 465
-         subject: Github Actions job result
-         to: ayush.hakhu@gmail.com
-         from: Ayush Hakhu  
-         attachments: ./Results/*.log
-         priority: low
+      - run: npm run sendreport
