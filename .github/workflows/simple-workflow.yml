@@ -3,7 +3,7 @@ name: Daily
 
 on:
   schedule:
-     - cron: '*/15 1 1 * 1-5'
+     - cron: '*/15 * * * 1-5'
 #        - cron: '*/5 * * * *'
 jobs:
   build:
