@@ -6,6 +6,12 @@ on:
 #      - cron: '*/15 * * * 1-5'
 #        - cron: '* * * * *'
        - cron: '10 12 * * *'
+env:
+ MAIL_USER_EMAIL: ${{secrets.MAIL_USER_EMAIL}}
+ MAIL_USER_PASSWORD: ${{secrets.MAIL_USER_PASSWORD}}
+ MAIL_FROM: ${{secrets.MAIL_FROM}}
+ MAIL_TO: ${{secrets.MAIL_TO}}
+
 jobs:
   build:
     runs-on: ubuntu-latest
