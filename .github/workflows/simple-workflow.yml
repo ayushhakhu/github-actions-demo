@@ -23,12 +23,4 @@ jobs:
          node-version: '16'
       - run: npm install
       - run: npm run wdio
-      - uses: dawidd6/action-send-mail@v3
-        with:
-         server_address: smtp.gmail.com 
-         server_port: 465
-         subject: Github Actions job result
-         to: ayush.hakhu@gmail.com
-         from: Ayush Hakhu  
-         attachments: ./Results/*.log
-         priority: low
+      - run: npm run sendreport
