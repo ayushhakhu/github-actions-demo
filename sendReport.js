@@ -1,5 +1,6 @@
 require("dotenv").config();
 const nodemailer = require("nodemailer");
+const filePath = require("fs/promises");
 
 (async function sendMailFunction() {
     await console.log("Sending Report Over Mail");
@@ -20,5 +21,6 @@ const nodemailer = require("nodemailer");
         subject: "Daily Report",
         text: "Please find daily report",
         html: "<b>Hello world?</b>",
+        attachments: [filePath.readFile('./Results/wdio-0-0-json-reporter.log')]
     });
 })()
