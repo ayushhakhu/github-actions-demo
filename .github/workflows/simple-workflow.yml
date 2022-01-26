@@ -4,7 +4,8 @@ name: Daily
 on:
   schedule:
 #      - cron: '*/15 * * * 1-5'
-       - cron: '* * * * *'
+#        - cron: '* * * * *'
+       - cron: '10 12 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
