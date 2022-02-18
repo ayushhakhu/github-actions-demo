@@ -12,7 +12,6 @@
         "nodemailer": "^6.7.2",
         "wdio-chromedriver-service": "^7.2.6",
         "wdio-json-reporter": "^3.0.0",
-        "@wdio/types": "^7.8.0"
     },
     "scripts": {
         "wdio": "wdio run wdio.conf.js",
