@@ -22,7 +22,7 @@ jobs:
          node-version: '16'
       - run: npm install
       - run: npm run wdio
-#       - run: npm run sendreport
+      - run: npm run sendreport
       - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v2
